@@ -1,0 +1,32 @@
+{
+  "name": "derhansen/pagination_example",
+  "type": "typo3-cms-extension",
+  "description": "Extension for demonstration purposes of the Pagination API introduced in TYPO3 10.4",
+  "homepage": "https://github.com/derhansen/pagination_example",
+  "support": {
+    "issues": "https://github.com/derhansen/pagination_example/issues"
+  },
+  "authors": [
+    {
+      "name": "Torben Hansen",
+      "email": "derhansen@gmail.com",
+      "homepage": "https://www.derhansen.com",
+      "role": "Developer"
+    }
+  ],
+  "keywords": ["TYPO3 CMS", "pagination"],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "require": {
+    "typo3/cms-core": "^10.4"
+  },
+  "replace": {
+    "typo3-ter/pagination_example": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "Derhansen\\PaginationExample\\": "Classes"
+    }
+  }
+}

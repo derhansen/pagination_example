@@ -1,0 +1,31 @@
+<nav class="pagination-wrap">
+  <ul class="pagination pagination-block">
+    <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+      <li>
+        <a href="{f:uri.action(action: 'controller', arguments:{currentPage: 1})}" title="First page">
+          First page
+        </a>
+      </li>
+      <li>
+        <a href="{f:uri.action(action: 'controller', arguments:{currentPage: pagination.previousPageNumber})}" title="Previous page">
+          Previous page
+        </a>
+      </li>
+    </f:if>
+    <li>
+      Records {pagination.startRecordNumber} - {pagination.endRecordNumber}
+    </li>
+    <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+      <li>
+        <a href="{f:uri.action(action: 'controller', arguments:{currentPage: pagination.nextPageNumber})}" title="Next page">
+          Next page
+        </a>
+      </li>
+      <li>
+        <a href="{f:uri.action(action: 'controller', arguments:{currentPage: pagination.lastPageNumber})}" title="Last page">
+          Last page
+        </a>
+      </li>
+    </f:if>
+  </ul>
+</nav>
