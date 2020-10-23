@@ -12,6 +12,9 @@
 			<trans-unit id="plugin.pi2.title">
 				<source>Example pagination SimplePagination in controller</source>
 			</trans-unit>
+			<trans-unit id="plugin.pi3.title">
+				<source>Example pagination CustomPagination in controller</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -3,6 +3,7 @@
 namespace Derhansen\PaginationExample\Controller;
 
 use Derhansen\PaginationExample\Domain\Repository\DemoRepository;
+use Derhansen\PaginationExample\Pagination\CustomPagination;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
@@ -46,6 +47,24 @@ class DemoController extends ActionController
 
         $paginator = new QueryResultPaginator($items, $currentPage);
         $pagination = new SimplePagination($paginator);
+
+        $this->view->assignMultiple([
+            'paginator' => $paginator,
+            'pagination' => $pagination,
+        ]);
+    }
+
+    /**
+     * Action which paginates using the SimplePagination class
+     *
+     * @param int $currentPage
+     */
+    public function customAction(int $currentPage = 1)
+    {
+        $items = $this->demoRespository->findAll();
+
+        $paginator = new QueryResultPaginator($items, $currentPage, 1);
+        $pagination = new CustomPagination($paginator);
 
         $this->view->assignMultiple([
             'paginator' => $paginator,

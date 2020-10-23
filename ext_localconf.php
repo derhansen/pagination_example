@@ -27,7 +27,7 @@ call_user_func(function () {
         'PaginationExample',
         'Pi3',
         [
-            \Derhansen\PaginationExample\Controller\DemoController::class => 'viewhelper',
+            \Derhansen\PaginationExample\Controller\DemoController::class => 'custom',
         ],
         [
             \Derhansen\PaginationExample\Controller\DemoController::class => '',
