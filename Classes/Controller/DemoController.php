@@ -63,8 +63,11 @@ class DemoController extends ActionController
     {
         $items = $this->demoRespository->findAll();
 
+        // We set items per page to 1 below
         $paginator = new QueryResultPaginator($items, $currentPage, 1);
-        $pagination = new CustomPagination($paginator);
+
+        // And we use the custom pagination with a max. amount of 10 pages
+        $pagination = new CustomPagination($paginator, 10);
 
         $this->view->assignMultiple([
             'paginator' => $paginator,
